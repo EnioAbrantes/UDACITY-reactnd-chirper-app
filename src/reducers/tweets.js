@@ -1,4 +1,3 @@
-import { RECEIVE_TWEETS, TOGGLE_TWEET } from '../actions/tweets'
 import { RECEIVE_TWEETS, TOGGLE_TWEET, ADD_TWEET } from '../actions/tweets'
 
 export default function tweets(state = {}, action){
@@ -26,7 +25,7 @@ export default function tweets(state = {}, action){
               replyingTo = {
                 [tweet.replyingTo]: {
                   ...state[tweet.replyingTo],
-                  replies: state[tweet.replyTo].replies.concat([tweet.id])
+                  replies: state[tweet.replyingTo].replies.concat([tweet.id])
                 }
               }
             }
